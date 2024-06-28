@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NUMBER CLASSIFICATION AND RANGE CHECK </h1>
+    <label for="enter">ENTER NUMBER</label>
+    <input id="enter" type="number">
+    <button id="check" onclick="action()">check</button>
+    <div id="result"> Result Here</div>
+
+    <script>
+        function action(){
+
+        let enternumber = document.getElementById("enter");
+        let checkButton = document.getElementById("#check");
+        let result = "";
+        
+        if (enternumber.value > 0){
+            result += "number is postive <br>";
+            if(enternumber.value % 2 === 0){
+                result +="the number is postive and even <br>";
+            }
+            else{
+                result += "number is postive and odd <br>";
+            }
+        }else if (enternumber.value < 0){
+            result += "number is negative <br>";
+            if(enternumber.value % 2 === 0){
+                result +="the number is negative and even <br>";
+            } 
+            else{
+                result += "number is negative and odd <br>";
+            }
+        }else{
+             result += "the number is zero <br>";
+            if(-10<= enternumber.value && enternumber.value <= 10){
+                result += "the number is zero and within the range[-10,10]<br>";
+            }else{
+                result +="the number is zero and outside the range [-10,10] <br>";
+            }
+           
+        }
+        
+        document.getElementById("result").innerHTML= result;
+        
+        }
+    </script>    
+
+</body>
+</html>
